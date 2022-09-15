@@ -22,5 +22,5 @@ I let the wires exit the machine through an opening already made on the support 
 
 ![Wires coming out the machine](img/wires.png "Wires coming out the coffee maker")
 
-This wires being connected on each port of the On/Off button, connecting them together has the exact same effect as pushing the button. If the machine is off, it turns it on and start heating the water. If the machine if on, it turns it off.
+This wires being connected on each port of the On/Off button, connecting them together has the exact same effect as pushing the button. If the machine is off, it turns it on and start heating the water. If the machine is on, it turns it off.
 
