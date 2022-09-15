@@ -24,3 +24,24 @@ I let the wires exit the machine through an opening already made on the support 
 
 This wires being connected on each port of the On/Off button, connecting them together has the exact same effect as pushing the button. If the machine is off, it turns it on and start heating the water. If the machine is on, it turns it off.
 
+## Circuit
+
+To connect the coffee maker, I went for a Wemos D1 mini (as this was the only WiFi board I had available at this time). The concept is quite easy as I just have to contact the two wires to make it work. 
+
+I went for an optocoupler 4N35. Its input is connected to a pin of the Wemos. When this output is set to HIGH, the internal LED of the 4N35 lights up and its outputs are coupled. Both wires coming from the coffee maker are connected to these outputs.
+
+Therefore when the PIN of the Wemos is set to HIGH, for the Senseo, it is like someone is pressing the button. 
+
+## Software
+
+The software is contained in this repository.
+
+It is based on [my template for ESP8266 with web server](http://www.github.com/fmanach/esp8266-template-webserver).
+
+__One would have to install the ESP8266 Arduino core before being able to compile it.__
+
+Basically, the Wemos board connect to WiFi and start a web server waiting for a request on the /pushButton endpoint. When this request is made, the PIN connected to the optocoupleur is set to HIGH for 500ms and back to LOW. That way, it simulates a push on this button.
+
+The Wemos announces itself through mDNS in order to be reachable without having to find its IP address. 
+
+Once started, any call on http://sensuino.local/pushButton would start the heating.
