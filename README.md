@@ -40,8 +40,8 @@ It is based on [my template for ESP8266 with web server](http://www.github.com/f
 
 __One would have to install the ESP8266 Arduino core before being able to compile it.__
 
-Basically, the Wemos board connect to WiFi and start a web server waiting for a request on the /pushButton endpoint. When this request is made, the PIN connected to the optocoupleur is set to HIGH for 500ms and back to LOW. That way, it simulates a push on this button.
+Basically, the Wemos board connect to WiFi and start a web server waiting for a request on the /pushButton endpoint. When this request is made, the PIN connected to the optocoupleur is set to HIGH for 500ms and back to LOW. That way, it simulates a push on the On/Off button.
 
 The Wemos announces itself through mDNS in order to be reachable without having to find its IP address. 
 
-Once started, any call on http://sensuino.local/pushButton would start the heating.
+Once started, any call on http://sensuino.local/pushButton from the local network would start the heating.
