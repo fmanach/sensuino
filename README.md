@@ -50,7 +50,7 @@ Once started, any call on http://sensuino.local/pushButton from the local networ
 
 The main reason why I chose to expose an HTTP endpoint was because I wanted the remote heating to be integrated in home automation platforms. 
 
-As a user of Apple devices, my platform of choice is HomeKit and I have a [Hombridge](https://github.com/homebridge) instance running for all that is not HomeKit compatible. 
+As a user of Apple devices, my platform of choice is HomeKit and I have a [Homebridge](https://github.com/homebridge) instance running for all that is not HomeKit compatible. 
 
 Thanks to the [homebridge-http-switch](https://github.com/Supereg/homebridge-http-switch) plugin, I have been able to integrate my coffee maker in my HomeKit environnement. I used a stateless switch so Homebridge take care of switching back to Off two seconds after I turned it on.
 
@@ -64,7 +64,7 @@ Here is the config I used in Homebridge :
             "timeout": 2000,
             "onUrl": "http://sensuino.local/pushButton"
         }
-    ],
+    ]
 ```
 Now, I can start the heating of my Sensuino from the iOS Home App or vocally with Siri. I also added it to my "Good morning !" scene that I trigger when I wake up.
 
